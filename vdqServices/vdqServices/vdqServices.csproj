@@ -74,16 +74,16 @@
       <Project>{caf0f459-b9f4-41be-81cc-7db4080eb62a}</Project>
       <Name>Common.Lib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HxhtSDK.Lib\VideoCapture.Lib.csproj">
-      <Project>{6a1cd3e0-83e6-4161-9b7b-9a0906d94e84}</Project>
-      <Name>VideoCapture.Lib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MQService.Lib\MQService.Lib.csproj">
       <Project>{811efc27-b39d-4418-8d73-d618781aae51}</Project>
       <Name>MQService.Lib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sobey.Lib\VideoDiagnosis.Lib.csproj">
-      <Project>{d3cbb2bf-ab54-40dd-9b9e-ecdf04d77f08}</Project>
+    <ProjectReference Include="..\VideoCapture.Lib\VideoCapture.Lib.csproj">
+      <Project>{74a194bd-5de9-41f4-a781-061803e44f73}</Project>
+      <Name>VideoCapture.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoDiagnosis.Lib\VideoDiagnosis.Lib.csproj">
+      <Project>{12f99069-28fb-41f7-9dcf-48763dd139eb}</Project>
       <Name>VideoDiagnosis.Lib</Name>
     </ProjectReference>
   </ItemGroup>

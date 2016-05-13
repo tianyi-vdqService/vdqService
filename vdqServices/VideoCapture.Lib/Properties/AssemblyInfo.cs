@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("HxhtSDK.Lib")]
+[assembly: AssemblyTitle("VideoCapture.Lib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HxhtSDK.Lib")]
+[assembly: AssemblyProduct("VideoCapture.Lib")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("6a1cd3e0-83e6-4161-9b7b-9a0906d94e84")]
+[assembly: Guid("74a194bd-5de9-41f4-a781-061803e44f73")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

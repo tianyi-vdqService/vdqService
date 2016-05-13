@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HxhtSDK.Lib
+namespace VideoCapture.Lib
 {
     public class Class1
     {

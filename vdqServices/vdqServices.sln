@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vdqServices", "vdqServices\vdqServices.csproj", "{ECE91F2F-51BC-46EA-989F-448A9590EE41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HxhtSDK.Lib", "HxhtSDK.Lib\HxhtSDK.Lib.csproj", "{6A1CD3E0-83E6-4161-9B7B-9A0906D94E84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.Lib", "HxhtSDK.Lib\VideoCapture.Lib.csproj", "{6A1CD3E0-83E6-4161-9B7B-9A0906D94E84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sobey.Lib", "Sobey.Lib\Sobey.Lib.csproj", "{D3CBB2BF-AB54-40DD-9B9E-ECDF04D77F08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDiagnosis.Lib", "Sobey.Lib\VideoDiagnosis.Lib.csproj", "{D3CBB2BF-AB54-40DD-9B9E-ECDF04D77F08}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQService.Lib", "MQService.Lib\MQService.Lib.csproj", "{811EFC27-B39D-4418-8D73-D618781AAE51}"
 EndProject

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vdqServices.asdfsd
+namespace Sobey.Lib
 {
-    class test
+    public class Class1
     {
     }
 }

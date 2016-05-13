@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ECE91F2F-51BC-46EA-989F-448A9590EE41}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{811EFC27-B39D-4418-8D73-D618781AAE51}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>vdqServices</RootNamespace>
-    <AssemblyName>vdqServices</AssemblyName>
+    <RootNamespace>MQService.Lib</RootNamespace>
+    <AssemblyName>MQService.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,58 +31,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProjectInstaller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ProjectInstaller.Designer.cs">
-      <DependentUpon>ProjectInstaller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Service1.Designer.cs">
-      <DependentUpon>Service1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ProjectInstaller.resx">
-      <DependentUpon>ProjectInstaller.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common.Lib\Common.Lib.csproj">
-      <Project>{caf0f459-b9f4-41be-81cc-7db4080eb62a}</Project>
-      <Name>Common.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HxhtSDK.Lib\HxhtSDK.Lib.csproj">
-      <Project>{6a1cd3e0-83e6-4161-9b7b-9a0906d94e84}</Project>
-      <Name>HxhtSDK.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MQService.Lib\MQService.Lib.csproj">
-      <Project>{811efc27-b39d-4418-8d73-d618781aae51}</Project>
-      <Name>MQService.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sobey.Lib\Sobey.Lib.csproj">
-      <Project>{d3cbb2bf-ab54-40dd-9b9e-ecdf04d77f08}</Project>
-      <Name>Sobey.Lib</Name>
-    </ProjectReference>
+    <Folder Include="Core\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,7 +17,7 @@ namespace vdqServices
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new VdqService()
             };
             ServiceBase.Run(ServicesToRun);
         }

@@ -10,16 +10,15 @@ using System.Threading.Tasks;
 
 namespace vdqServices
 {
-    public partial class Service1 : ServiceBase
+    public partial class VdqService : ServiceBase
     {
-        public Service1()
+        public VdqService()
         {
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
-
 
         }
 

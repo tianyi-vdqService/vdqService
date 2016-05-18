@@ -1,6 +1,6 @@
 ﻿namespace vdqServices
 {
-    partial class Service1
+    partial class VdqService
     {
         /// <summary> 
         /// 必需的设计器变量。

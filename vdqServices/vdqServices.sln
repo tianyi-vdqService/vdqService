@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.Lib", "VideoCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoDiagnosis.Lib", "VideoDiagnosis.Lib\VideoDiagnosis.Lib.csproj", "{12F99069-28FB-41F7-9DCF-48763DD139EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQTest", "MQTest\MQTest.csproj", "{BCBE1212-0316-491B-B902-9263271F09D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{12F99069-28FB-41F7-9DCF-48763DD139EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F99069-28FB-41F7-9DCF-48763DD139EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F99069-28FB-41F7-9DCF-48763DD139EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBE1212-0316-491B-B902-9263271F09D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBE1212-0316-491B-B902-9263271F09D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBE1212-0316-491B-B902-9263271F09D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBE1212-0316-491B-B902-9263271F09D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,13 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Core\DBMySql.cs" />
+    <Compile Include="Core\FileLog.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\DeviceStatus.cs" />
+    <Compile Include="Model\Log.cs" />
+    <Compile Include="Model\LogType.cs" />
+    <Compile Include="Model\Param.cs" />
+    <Compile Include="Model\Task.cs" />
+    <Compile Include="Model\TaskItem.cs" />
+    <Compile Include="Model\TaskItemType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\DeviceUtil.cs" />
+    <Compile Include="Util\LogUtil.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="Model\" />
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

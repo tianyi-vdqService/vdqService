@@ -28,24 +28,24 @@ namespace MQService.Lib.Core
 
         private IModel _ch;
 
-        public Producer()
+        public Producer(string userName, string password, string clientIp, int clientPort)
         {
 
-            InitModel();
+            InitModel(userName, password, clientIp, clientPort);
         }
 
-        private void InitModel()
+        private void InitModel(string userName, string password, string clientIp, int clientPort)
         {
             ConnectionFactory cf = new ConnectionFactory();
 
-            cf.UserName = "guest";//某个vhost下的用户
+            cf.UserName = userName;//某个vhost下的用户
 
-            cf.Password = "guest";
+            cf.Password = password;
 
             cf.RequestedHeartbeat = 0;
 
 
-            cf.Endpoint = new AmqpTcpEndpoint("25.30.9.145", 5672);
+            cf.Endpoint = new AmqpTcpEndpoint(clientIp, clientPort);
 
 
             IConnection conn = cf.CreateConnection();
@@ -98,9 +98,7 @@ namespace MQService.Lib.Core
 
 
             //写入  
-            _ch.BasicPublish(exchange, routingKey, null, Encoding.UTF8.GetBytes(content));
-
-            Console.WriteLine("写入成功");
+            _ch.BasicPublish(exchange, routingKey, null, System.Text.Encoding.Default.GetBytes(content));
 
         }
     }

@@ -1,4 +1,7 @@
-﻿using MQService.Lib.Core;
+﻿using Common.Lib.Model;
+using Common.Lib.Util;
+using MQService.Lib.Core;
+using MQService.Lib.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,27 +11,13 @@ using System.Threading.Tasks;
 namespace MQTest
 {
     public class Program
-    {
+    { 
         static void Main(string[] args)
         {
-            //调用MQ
-            Producer myProducer = new Producer();
-
-            QueueConsumer myConsumer = new QueueConsumer(myProducer.QueueName);
-
-            myConsumer.OnMessageArrive += MyConsumer_OnMessageArrive1; ;
-
-            //myConsumer.Receive();
-
-            myProducer.Send("陈丹是二货");
-        }
-        /// <summary>
-        /// MQ调用之后，的回调方法，执行相关操作
-        /// </summary>
-        /// <param name="msg"></param>
-        private static void MyConsumer_OnMessageArrive1(string msg)
-        {
-            Console.WriteLine(msg);
+            //MQ消息推送封装
+            MQSend.Send("MQMessage", SystemConfig.MQUserName, SystemConfig.MQPassword, SystemConfig.MQClientIp, SystemConfig.MQClientPort, SystemConfig.MySqlCon);
+            //写日志封装
+            LogUtil.WriteLog("WriteLogMessage", (Int32)LogType.NetWork, SystemConfig.MySqlCon);
         }
          
     }

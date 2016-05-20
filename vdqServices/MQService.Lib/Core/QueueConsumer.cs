@@ -27,17 +27,17 @@ namespace MQService.Lib.Core
         string routingKey = "routeData.ywAlarm.video";//路由关键字  
 
 
-        public QueueConsumer(string queueName)
+        public QueueConsumer(string queueName, string userName, string password, string clientIp, int clientPort)
         {
             _queueName = queueName;
 
             ConnectionFactory cf = new ConnectionFactory();
 
-            cf.Endpoint = new AmqpTcpEndpoint("25.30.9.145", 5672);
+            cf.Endpoint = new AmqpTcpEndpoint(clientIp, clientPort);
 
 
-            cf.UserName = "guest";
-            cf.Password = "guest";
+            cf.UserName = userName;
+            cf.Password = password;
 
             cf.RequestedHeartbeat = 0;
 

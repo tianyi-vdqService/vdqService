@@ -23,21 +23,58 @@ namespace VideoCapture.Lib.Core
                 ThrdManager thdManager = new ThrdManager();
                 thdManager.RegUIThrd();
                 HxhtSession session = new HxhtSession();
-                try
+                string initXml = "<Message type=\"center\">"
+                         + "< Center host=\"\" port =\"\" version=\"3\" ssl=\"0\" />"
+                         + "< Access host=\"\" port=\"\" />"
+                         + "< Self host=\"\" />"
+                         + "< Catalog url=\"\" />"
+                         + "< Account name=\"\" pswd=\"\" dog=\"\" decrypt=\"\" />"
+                         + "</ Message >"; 
+
+                string centerInfo = session.GetCenterInfo(null);
+                if (!String.IsNullOrEmpty(centerInfo))
                 {
-                    long init = session.Init("", "");
-                    long login = session.Login();
-                    //执行session初始化，登录，等待回调函数执行；
-                    session.OnStatusChanged += Session_OnStatusChanged;
+                    do
+                    {
+                        try
+                        {
+                            long init = session.Init(initXml, centerInfo);
+                            if (init == 0)
+                            {
+                                long login = session.Login();
+                                if (login == 0)
+                                {
+                                    //执行session初始化，登录，等待回调函数执行；
+                                    session.OnStatusChanged += Session_OnStatusChanged;
+                                }
+                                else
+                                {
+                                    thdManager.UnRegUIThrd();
+                                    LogUtil.WriteLog("调用天翼SDK，初始化异常，SDK登录认证失败", (Int32)LogType.VdqCpature, connStr);
+                                }
+                            }
+                            else
+                            {
+                                thdManager.UnRegUIThrd();
+                                LogUtil.WriteLog("调用天翼SDK，初始化异常，SDK初始化认证失败", (Int32)LogType.VdqCpature, connStr);
+                            }
+
+                        }
+                        catch (Exception)
+                        {
+                            thdManager.UnRegUIThrd();
+                            LogUtil.WriteLog("调用天翼SDK，初始化异常，SDK登录认证失败", (Int32)LogType.VdqCpature, connStr);
+                        }
+                        finally
+                        {
+                            thdManager.UnRegUIThrd();
+                        }
+                    } while (session.LoggedIn());
                 }
-                catch (Exception)
+                else
                 {
                     thdManager.UnRegUIThrd();
-                    LogUtil.WriteLog("调用天翼SDK，初始化异常，SDK登录认证失败", (Int32)LogType.VdqCpature, connStr);
-                }
-                finally
-                {
-                    thdManager.UnRegUIThrd();
+                    LogUtil.WriteLog("调用天翼SDK，从中心获取信息，GetCenterInfo出错", (Int32)LogType.VdqCpature, connStr);
                 }
             }
             //SDK初始化异常 

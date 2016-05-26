@@ -57,6 +57,10 @@
       <Project>{811efc27-b39d-4418-8d73-d618781aae51}</Project>
       <Name>MQService.Lib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VideoCapture.Lib\VideoCapture.Lib.csproj">
+      <Project>{74a194bd-5de9-41f4-a781-061803e44f73}</Project>
+      <Name>VideoCapture.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

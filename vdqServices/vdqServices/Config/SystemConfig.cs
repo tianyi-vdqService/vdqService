@@ -16,6 +16,10 @@ namespace vdqServices.Config
         public static readonly string MQExchange = ConfigurationManager.AppSettings["MQ.Exchange"].ToString();
         public static readonly string MQExchangeType = ConfigurationManager.AppSettings["MQ.ExchangeType"].ToString();
         public static readonly string MQRoutingKey = ConfigurationManager.AppSettings["MQ.RoutingKey"].ToString();
+        public static readonly string CenterIp = ConfigurationManager.AppSettings["Center.Host"].ToString();
+        public static readonly string CenterPort = ConfigurationManager.AppSettings["Center.Port"].ToString();
+        public static readonly string AccountName = ConfigurationManager.AppSettings["Account.Name"].ToString();
+        public static readonly string AccountPwd = ConfigurationManager.AppSettings["Account.Pwd"].ToString();
         public static readonly string MySqlCon = ConfigurationManager.ConnectionStrings["SqlConnectionStr"].ToString();
     }
 }

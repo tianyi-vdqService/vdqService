@@ -16,7 +16,7 @@ namespace SocketServer.Lib.Socket
 {
     public class SocketHostServer : ISocketHostServer
     {
-        private string hostIP = ConfigurationManager.AppSettings["Server_Address"];
+        private string hostIP = ConfigurationManager.AppSettings["Server_Address"]; 
         public string HostIP
         {
             get { return this.hostIP; }

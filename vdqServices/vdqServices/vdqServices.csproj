@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\SystemConfig.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -79,6 +78,10 @@
     <ProjectReference Include="..\MQService.Lib\MQService.Lib.csproj">
       <Project>{811efc27-b39d-4418-8d73-d618781aae51}</Project>
       <Name>MQService.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocketServer.Lib\SocketServer.Lib.csproj">
+      <Project>{9abd3bb3-4fdc-4c8d-bd0d-d4038c0dde47}</Project>
+      <Name>SocketServer.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="..\VideoCapture.Lib\VideoCapture.Lib.csproj">
       <Project>{74a194bd-5de9-41f4-a781-061803e44f73}</Project>

@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCBE1212-0316-491B-B902-9263271F09D2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9ABD3BB3-4FDC-4C8D-BD0D-D4038C0DDE47}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MQTest</RootNamespace>
-    <AssemblyName>MQTest</AssemblyName>
+    <RootNamespace>SocketServer.Lib</RootNamespace>
+    <AssemblyName>SocketServer.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,8 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,29 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Core\ConstParameter.cs" />
+    <Compile Include="Core\MessageType.cs" />
+    <Compile Include="Core\Message.cs" />
+    <Compile Include="Core\PackageHeader.cs" />
+    <Compile Include="Core\ServiceRequest.cs" />
+    <Compile Include="Events\ConnectionEventArgs.cs" />
+    <Compile Include="Events\EventHandlers.cs" />
+    <Compile Include="Events\MessageEventArgs.cs" />
+    <Compile Include="Exceptions\ErrorMessage.cs" />
+    <Compile Include="Exceptions\LostException.cs" />
+    <Compile Include="ISocket\ISocketConnection.cs" />
+    <Compile Include="ISocket\ISocketHostServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\SocketConnection.cs" />
+    <Compile Include="Socket\SocketHostServer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common.Lib\Common.Lib.csproj">
-      <Project>{CAF0F459-B9F4-41BE-81CC-7DB4080EB62A}</Project>
-      <Name>Common.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MQService.Lib\MQService.Lib.csproj">
-      <Project>{811efc27-b39d-4418-8d73-d618781aae51}</Project>
-      <Name>MQService.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SocketServer.Lib\SocketServer.Lib.csproj">
-      <Project>{9abd3bb3-4fdc-4c8d-bd0d-d4038c0dde47}</Project>
-      <Name>SocketServer.Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VideoCapture.Lib\VideoCapture.Lib.csproj">
-      <Project>{74a194bd-5de9-41f4-a781-061803e44f73}</Project>
-      <Name>VideoCapture.Lib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <EmbeddedResource Include="Lib\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MQTest
+namespace SocketServer.Lib.Core
 {
-    public class SystemConfig
-    { 
+    public enum MessageType
+    {
+        txt, img, file, unknown
     }
 }
